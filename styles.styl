@@ -19,7 +19,7 @@ shadow-level(l = 1)
 
 // Common Transition
 trans($sec = 0.3s)
-    transition: all $sec ease
+    transition: all $sec ease-in-out
 // Grid
 $xsmall = 340px
 $small = 500px
@@ -75,7 +75,9 @@ html
 
 body
     background light-grey
-    padding: 70px 0 150px
+    padding: 70px 0 150px 100px
+    +below($med)
+        padding: 70px 0 150px !important
 
 header
     color #FFF 

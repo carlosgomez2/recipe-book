@@ -1,4 +1,10 @@
-Meteor.subscribe('recipes');
+// Load Recipes Subscribe
+Template.Recipes.onCreated(function() {
+  let self = this
+  self.autorun(function() {
+    self.subscribe('recipes')
+  })
+})
 
 Template.Recipes.helpers({
   recipes: () => {

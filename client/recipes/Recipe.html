@@ -9,11 +9,16 @@
         </span>
       {{/each}}
     </p>
-      <a href="/recipe/{{_id}}" class="details"><button>View Details</button></a>
-      {{#if inMenu}}
-        <button class="btn-deny toggle-menu">Remove from Menu</button>
-      {{else}}
-        <button class="btn-primary toggle-menu">Add To Menu</button>
-      {{/if}}
+    <a href="/recipe/{{_id}}" class="details"><button>View Details</button></a>
+    {{#if inMenu}}
+      <button class="btn-deny toggle-menu">Remove from Menu</button>
+    {{else}}
+      <button class="btn-primary toggle-menu">Add To Menu</button>
+    {{/if}}
+
+    <br />
+
+    {{> quickForm collection="Recipes" id=updateRecipeId type="update" doc=this autosave=true}}
+
   </article>
 </template>

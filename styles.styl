@@ -135,19 +135,23 @@ p
     background #FFF
     padding 20px
     margin-bottom 20px 
-    shadow-level(2) 
+    shadow-level(2)
     .fa-close
         position absolute
         top 0
         right 0
-        padding 20px   
+        padding 20px
+        cursor pointer
+        transition: all 0.3s ease-in-out
+        &:hover
+            color: red
     label
         display block
         margin-bottom 10px 
     textarea, input
         width 100% 
 
-.new-recipe-container, .recipes, .content
+.content
     max-width 1000px
     width: 95%
     margin 20px auto
@@ -336,20 +340,26 @@ input, select, textarea
         margin-bottom 10px 
     button
         margin-top 20px 
-    .fa-trash
+    .fa-trash, .fa-pencil
         opacity 0.3
         cursor pointer
         position absolute
         top 0
-        right 0
         font-size 1.6em  
         display block
         padding 20px 
         color black
         trans()
         &:hover
-            color red 
             opacity 0.6
+    .fa-trash
+        right 8px
+        &:hover
+            color red
+    .fa-pencil
+        right 50px
+        &:hover
+            color purp
     .ingredient
         display inline-block
         margin-right 10px 

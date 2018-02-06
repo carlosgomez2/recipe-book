@@ -7,6 +7,9 @@ SimpleSchema.extendOptions(['autoform']);
 Recipes.allow({
   insert: function(userId, doc){
     return !!userId;
+  },
+  update: function (userId, doc) {
+    return !!userId
   }
 })
 
@@ -61,6 +64,17 @@ const RecipeSchema = new SimpleSchema({
     autoform: {
       type: "hidden"
     }
+  }
+})
+
+// Toggle menu method
+Meteor.methods({
+  toggleMenuItem: function(id, currentState) {
+    Recipes.update(id, {
+      $set: {
+        inMenu: !currentState
+      }
+    })
   }
 })
 
